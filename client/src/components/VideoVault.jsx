@@ -7,7 +7,8 @@ export function getVideoUrl(categoryDir, fileName) {
   if (CLOUDINARY_CLOUD_NAME) {
     const encodedCategory = encodeURIComponent(categoryDir);
     const cleanFileName = fileName.replace(/\.[^/.]+$/, ""); // Strip original extension
-    return `https://res.cloudinary.com/${CLOUDINARY_CLOUD_NAME}/video/upload/f_auto,q_auto/portfolio/${encodedCategory}/${cleanFileName}.mp4`;
+    const encodedFileName = encodeURIComponent(cleanFileName);
+    return `https://res.cloudinary.com/${CLOUDINARY_CLOUD_NAME}/video/upload/f_auto,q_auto/portfolio/${encodedCategory}/${encodedFileName}.mp4`;
   }
   return `/videos/${categoryDir}/${fileName}`;
 }
@@ -16,7 +17,8 @@ export function getVideoPoster(categoryDir, fileName) {
   if (CLOUDINARY_CLOUD_NAME) {
     const encodedCategory = encodeURIComponent(categoryDir);
     const cleanFileName = fileName.replace(/\.[^/.]+$/, "");
-    return `https://res.cloudinary.com/${CLOUDINARY_CLOUD_NAME}/video/upload/f_auto,q_auto/portfolio/${encodedCategory}/${cleanFileName}.jpg`;
+    const encodedFileName = encodeURIComponent(cleanFileName);
+    return `https://res.cloudinary.com/${CLOUDINARY_CLOUD_NAME}/video/upload/f_auto,q_auto/portfolio/${encodedCategory}/${encodedFileName}.jpg`;
   }
   return ''; 
 }
@@ -33,7 +35,7 @@ const categoriesData = [
   {
     key: 'AI UGC',
     name: 'AI UGC Creator',
-    file: '2.1-invideo-seedance_2_0 (3).mp4',
+    file: 'Video-172.mp4',
     count: 8,
     tags: ['Synthesia', 'HeyGen', 'Realistic Avatar'],
     desc: 'Authentic creator review vlog and reaction posts.'
@@ -47,9 +49,9 @@ const categoriesData = [
     desc: 'Surreal visual loops and liquid metal morphing physics.'
   },
   {
-    key: 'CINEMATIC AI_',
+    key: 'cinematic_ai',
     name: 'Cinematic AI',
-    file: 'Video-307 (1).mp4',
+    file: 'Video-685.mp4',
     count: 4,
     tags: ['Sora AI', 'Epic Sci-Fi', 'World-Gen'],
     desc: 'Immersive trailers, neon cityscapes, and narrative worlds.'
@@ -74,7 +76,7 @@ const videosData = [
   { id: 'ad-14', categoryDir: 'AI ADS', categoryName: 'AI ADS', file: 'Video-899.mp4', title: 'Luxume Roofing — Kerala Home', tags: ['Construction', 'Brand', 'Tropical'], desc: 'Warm and lush brand film for Luxume Roofing showing a beautiful Kerala traditional home under a mango tree at golden hour.' },
 
   // AI UGC
-  { id: 'ugc-1', categoryDir: 'AI UGC', categoryName: 'AI UGC', file: '2.1-invideo-seedance_2_0 (3).mp4', title: 'Wildplay Chocolate Fragrance', tags: ['UGC', 'Fragrance', 'Creator'], desc: 'Natural UGC-style creator review of Wildplay Chocolate Body Perfume — authentic hold-to-camera presentation with warm tones.' },
+  { id: 'ugc-1', categoryDir: 'AI UGC', categoryName: 'AI UGC', file: '2.1-invideo-seedance_2_0_3.mp4', title: 'Wildplay Chocolate Fragrance', tags: ['UGC', 'Fragrance', 'Creator'], desc: 'Natural UGC-style creator review of Wildplay Chocolate Body Perfume — authentic hold-to-camera presentation with warm tones.' },
   { id: 'ugc-2', categoryDir: 'AI UGC', categoryName: 'AI UGC', file: 'Video-172.mp4', title: 'Home Renovation Reveal', tags: ['UGC', 'Interior', 'Real Estate'], desc: 'Interior walkthrough UGC showing a freshly renovated room with a wooden glass door, pendant lights, and soft natural daylight.' },
   { id: 'ugc-3', categoryDir: 'AI UGC', categoryName: 'AI UGC', file: 'Video-32.mp4', title: 'Red Saree Rooftop Moment', tags: ['UGC', 'Fashion', 'Ethnic'], desc: 'Lifestyle UGC featuring a woman in a radiant red silk saree on a breezy rooftop at dusk — graceful and culturally rich.' },
   { id: 'ugc-4', categoryDir: 'AI UGC', categoryName: 'AI UGC', file: 'Video-359.mp4', title: 'Ethnic Jewellery Try-On', tags: ['UGC', 'Jewellery', 'Fashion'], desc: 'Vibrant creator content showcasing statement earrings and ethnic accessories in a lush outdoor setting — festive and real.' },
@@ -90,10 +92,10 @@ const videosData = [
   { id: 'ani-4', categoryDir: 'ANIMATION AI', categoryName: 'AI ANIMATIONS', file: 'Video-936.mp4', title: 'AI Creator Workflow', tags: ['Animation', 'EdTech', 'Tech'], desc: 'Stylised animated explainer featuring an AI video creator at work with Sony headphones, showcasing InVideo and next-gen AI tools.' },
 
   // CINEMATIC AI
-  { id: 'cine-1', categoryDir: 'CINEMATIC AI_', categoryName: 'CINEMATIC AI', file: 'Video-307 (1).mp4', title: 'Red Hoop Dimension', tags: ['Cinematic', 'Abstract', 'Surreal'], desc: 'Mesmerising surrealist cinematic — a glowing red basketball hoop suspended in a void with electric wire trails weaving into darkness.' },
-  { id: 'cine-2', categoryDir: 'CINEMATIC AI_', categoryName: 'CINEMATIC AI', file: 'Video-685.mp4', title: 'Frost Titan Chronicles', tags: ['Cinematic', 'Epic Fantasy', 'Creature'], desc: 'Epic fantasy cinematic featuring a towering armoured beast-warrior wielding a glowing rune staff in a snowswept mountain realm.' },
-  { id: 'cine-3', categoryDir: 'CINEMATIC AI_', categoryName: 'CINEMATIC AI', file: 'Video-943.mp4', title: 'Macaw Jungle Serenade', tags: ['Cinematic', 'Nature', 'Wildlife'], desc: 'Breathtaking wildlife cinematic of two scarlet macaws in an intimate jungle moment, bathed in cathedral rays of tropical sunlight.' },
-  { id: 'cine-4', categoryDir: 'CINEMATIC AI_', categoryName: 'CINEMATIC AI', file: 'openart-02178156919048000000000000000000000ffffc0a8a22a4844ab_1781569393835_f48e7a7c.mp4', title: 'BMW M3 — Rain & Power', tags: ['Cinematic', 'Automotive', 'Moody'], desc: 'Atmospheric automotive cinematic of a classic red BMW M3 hood-up on a misty rain-soaked road — raw power meets poetic grading.' },
+  { id: 'cine-1', categoryDir: 'cinematic_ai', categoryName: 'CINEMATIC AI', file: 'Video-685.mp4', title: 'Frost Titan Chronicles', tags: ['Cinematic', 'Epic Fantasy', 'Creature'], desc: 'Epic fantasy cinematic featuring a towering armoured beast-warrior wielding a glowing rune staff in a snowswept mountain realm.' },
+  { id: 'cine-2', categoryDir: 'cinematic_ai', categoryName: 'CINEMATIC AI', file: 'Video-943.mp4', title: 'Macaw Jungle Serenade', tags: ['Cinematic', 'Nature', 'Wildlife'], desc: 'Breathtaking wildlife cinematic of two scarlet macaws in an intimate jungle moment, bathed in cathedral rays of tropical sunlight.' },
+  { id: 'cine-3', categoryDir: 'cinematic_ai', categoryName: 'CINEMATIC AI', file: 'openart-02178156919048000000000000000000000ffffc0a8a22a4844ab_1781569393835_f48e7a7c.mp4', title: 'BMW M3 — Rain & Power', tags: ['Cinematic', 'Automotive', 'Moody'], desc: 'Atmospheric automotive cinematic of a classic red BMW M3 hood-up on a misty rain-soaked road — raw power meets poetic grading.' },
+  { id: 'cine-4', categoryDir: 'cinematic_ai', categoryName: 'CINEMATIC AI', file: 'Video-685.mp4', title: 'Frost Titan Chronicles II', tags: ['Cinematic', 'Epic', 'Fantasy'], desc: 'A second chapter of the epic fantasy cinematic — beasts, blizzards, and glowing ancient weaponry in a vast frozen realm.' },
 ];
 
 function shuffleArray(array) {
