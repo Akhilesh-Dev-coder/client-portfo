@@ -62,7 +62,11 @@ export default function App() {
             <div className="hero-logo" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
               <img src="/images/Kaelix Logo-02.svg" alt="KAELIX.AI" style={{ height: 'clamp(52px, 8vw, 100px)', width: 'auto', display: 'block', margin: '10px 0 20px' }} />
             </div>
-            <div className="hero-headline">We create impossible visuals using artificial intelligence.</div>
+            <div className="hero-headline">
+              AI visuals optimized for every platform.
+              <br />
+              Built to reach. Designed to convert.
+            </div>
             <div className="hero-ctas">
               <a href="#contact" className="btn btn-primary">Start Your Project</a>
               <a href="#work" className="btn btn-secondary" onClick={(e) => { e.preventDefault(); setShowreelTrigger(true); }}>Watch Showreel</a>
@@ -74,6 +78,9 @@ export default function App() {
           </div>
         </section>
 
+        {/* STATS SECTION */}
+        <StatsGrid />
+
         {/* WORKS PORTFOLIO SECTION */}
         <VideoVault showreelTrigger={showreelTrigger} onShowreelClose={() => setShowreelTrigger(false)} />
 
@@ -83,8 +90,6 @@ export default function App() {
         {/* PROCESS TRACK SECTION */}
         <ProcessTrack />
 
-        {/* STATS SECTION */}
-        <StatsGrid />
 
         {/* TESTIMONIALS SECTION */}
         <Testimonials />

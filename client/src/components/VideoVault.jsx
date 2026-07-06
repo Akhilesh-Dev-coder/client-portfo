@@ -231,17 +231,7 @@ function ReelFeedSlide({ video, index, activeIndex, isMuted, onMuteToggle }) {
         />
       )}
 
-      {/* Subtle bottom scrim gradient for text legibility, keeping video at full brightness */}
-      <div className="reel-feed-bottom-info">
-        <span className="reel-feed-cat-label">{video.categoryName}</span>
-        <h3 className="reel-feed-title">{video.title}</h3>
-        <p className="reel-feed-desc">{video.desc}</p>
-        <div className="reel-feed-tags">
-          {video.tags.map((tag, idx) => (
-            <span key={idx} className="reel-feed-tag">#{tag}</span>
-          ))}
-        </div>
-      </div>
+
 
       {/* Floating HUD Right Panel Controls (Sound button, scroll cues) */}
       <div className="reel-feed-right-actions">
