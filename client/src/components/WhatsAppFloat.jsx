@@ -7,6 +7,7 @@ export default function WhatsAppFloat() {
 
   return (
     <div 
+      className="whatsapp-float-widget"
       style={{
         position: 'fixed',
         bottom: '30px',
@@ -15,7 +16,8 @@ export default function WhatsAppFloat() {
         display: 'flex',
         alignItems: 'center',
         gap: '12px',
-        pointerEvents: 'none' // Let hover trigger only on interactive children
+        pointerEvents: 'none', // Let hover trigger only on interactive children
+        transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)'
       }}
     >
       {/* Interactive Tooltip Badge */}

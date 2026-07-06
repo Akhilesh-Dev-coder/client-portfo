@@ -2994,3 +2994,9 @@ body.reels-active #navbar {
   transform: translateY(-100%) !important;
   transition: opacity 0.4s var(--ease-premium), transform 0.4s var(--ease-premium) !important;
 }
+
+body.reels-active .whatsapp-float-widget {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transform: translateY(30px) !important;
+}
